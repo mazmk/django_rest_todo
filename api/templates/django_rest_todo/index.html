@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="getDataForm" name="my">
+        Name: <input type="text" name="name" id="name" /> Age:
+        <input type="text" name="age" id="age" /> Adress:
+        <input type="text" name="adress" id="adress" /> Salary:
+        <input type="text" name="salary" id="salary" />
+        <button type="submit" id="btn">Submit</button>
+    </form>
+
+    <script>
+        let isUpdating = false;
+        let updatingIndex = null;
+        let name = document.getElementById("name");
+        let age = document.getElementById("age");
+        let adress = document.getElementById("adress");
+        let salary = document.getElementById("salary");
+
+        let form = document.forms.my;
+
+        let dataBase;
+        getAllVal().then((data) => {
+            dataBase = data;
+            makeTable(dataBase);
+            console.log("-------------> ", dataBase);
+        });
+
+        my.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // console.log('submit');
+
+            let obj = {
+                name: name.value,
+                age: age.value,
+                adress: adress.value,
+                salary: salary.value,
+            };
+
+            createUser(obj).then((data) => {
+                dataBase.push(data);
+                makeTable(dataBase);
+            });
+
+            name.value = "";
+            age.value = "";
+            adress.value = "";
+            salary.value = "";
+            // console.log(dataBase);
+        });
+
+        function removeTable() {
+            // console.log('remove run')
+            let tbl = document.querySelector("table");
+            if (tbl) {
+                tbl.parentNode.removeChild(tbl);
+            }
+        }
+
+        function makeTable(dataBase) {
+            removeTable();
+
+            let table = document.createElement("table");
+            dataBase.forEach((element, index) => {
+                if (index == 0) {
+                    let arr = ['id', 'name', 'age', 'salary', 'adress'];
+                    let tr = document.createElement("tr");
+                    for (let key in arr) {
+                        let th = document.createElement("th");
+                        let heading = arr[key];
+                        //   heading = heading[0].toUpperCase() + heading.slice(1);
+                        th.innerHTML = heading;
+                        tr.append(th);
+                        table.append(tr);
+                    }
+                }
+
+                let tr = document.createElement("tr");
+                let hehe = table.firstChild.childNodes;
+                Object.keys(element).forEach((key, ind) => {
+                    let td = document.createElement("td");
+                    let value = hehe[ind].childNodes[0].data;
+                    td.innerHTML = element[value];
+
+                    tr.append(td);
+                });
+
+
+                let td1 = document.createElement("td");
+                const btnAttr = {
+                    del: {
+                        innerHTML: "Delete",
+                    },
+                    upd: {
+                        innerHTML: "Update",
+                    },
+                };
+                let dltTextNode = document.createTextNode(btnAttr.del.innerHTML);
+                let updTextNode = document.createTextNode(btnAttr.upd.innerHTML);
+                let btnDlt = document.createElement("button");
+                btnDlt.onclick = () => {
+                    dltVal(index);
+                };
+                let btnUpd = document.createElement("button");
+                btnUpd.onclick = () => updVal(index);
+                btnDlt.appendChild(dltTextNode);
+                btnUpd.appendChild(updTextNode);
+                td1.append(btnUpd);
+                td1.append(btnDlt);
+                tr.append(td1);
+                table.append(tr);
+            });
+            // console.log(table);
+            document.body.append(table);
+            table.setAttribute("border", "");
+        }
+
+        function dltVal(index) {
+            deleteUser(dataBase[index].id).then((e) => {
+                dataBase.splice(index, 1);
+                makeTable(dataBase);
+            })
+
+        }
+        function updVal(index) {
+            console.log(dataBase[index]);
+            let values = Object.values(dataBase[index]);
+
+            console.log(values[1]);
+
+            name.value = values[0];
+            age.value = values[1];
+            adress.value = values[2];
+            salary.value = values[3];
+
+            // dataBase[index][name] = name.value;
+            // Object.values(dataBase[index])[1] = age.value;
+            // Object.values(dataBase[index])[2] = adress.value;
+            // Object.values(dataBase[index])[3] = salary.value;
+
+            console.log(dataBase);
+
+            let btn = document.getElementById("btn");
+            btn.innerHTML = "Update";
+
+            btn.addEventListener("click", update);
+
+            function update(e) {
+                e.preventDefault();
+                let obj = {
+                    name: name.value,
+                    age: age.value,
+                    adress: adress.value,
+                    salary: salary.value,
+                };
+
+                updateUser(dataBase[index].id, obj).then((data) => {
+                    dataBase.splice(index, 1, data);
+                    makeTable(dataBase);
+                })
+
+                name.value = "";
+                age.value = "";
+                adress.value = "";
+                salary.value = "";
+
+                // makeTable(dataBase);
+                btn.innerHTML = "Submit";
+                btn.removeEventListener("click", update);
+            }
+
+            console.log(dataBase);
+        }
+
+        async function getAllVal() {
+            let response = await fetch("http://localhost:3000/profile");
+            let data = await response.json();
+
+            console.log(data);
+            return data;
+        }
+
+        async function createUser(data) {
+            let response = await fetch("http://localhost:3000/profile", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            let value = await response.json();
+            return value;
+        }
+
+        async function deleteUser(id) {
+            let response = await fetch("http://localhost:3000/profile/" + id, {
+                method: "DELETE",
+            });
+            let data = await response.json();
+            return data;
+        }
+
+        async function updateUser(id, data) {
+            let response = await fetch("http://localhost:3000/profile/" + id, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            let value = await response.json();
+            return value;
+        }
+    </script>
+</body>
+
+</html>

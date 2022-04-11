@@ -1,0 +1,1 @@
+source ../Environments/django_rest_todo_venv/bin/activate && cd ../django_rest_todo/
