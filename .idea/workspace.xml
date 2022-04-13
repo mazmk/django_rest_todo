@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a1dfef7-d2e9-416e-bfab-3a97b23e5260" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_rest_todo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest_todo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todos/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos_v2/viewsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos_v2/viewsets.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +67,8 @@
       <updated>1649688111032</updated>
       <workItem from="1649688112448" duration="3795000" />
       <workItem from="1649779224972" duration="2105000" />
+      <workItem from="1649849063033" duration="2515000" />
+      <workItem from="1649859712589" duration="7025000" />
     </task>
     <servers />
   </component>
