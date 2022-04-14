@@ -1,6 +1,12 @@
-from . import viewsets
+from django.urls import include, path
 from rest_framework import routers
+from user.viewsets import LoginViewSet, SignUpViewSet
 
 router = routers.DefaultRouter()
-router.register('', viewsets.UserViewSet)
-urlpatterns = router.urls
+router.register("signup", SignUpViewSet)
+
+urlpatterns = [
+    path("", include(router.urls)),
+    path("login/", LoginViewSet.as_view()),
+
+]
