@@ -8,9 +8,10 @@ from .models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['email', 'user_id', 'password']
+        fields = ['email', 'id', 'password', 'is_active']
         extra_kwargs = {
-            'password': {'write_only': True}
+            'password': {'write_only': True},
+            'is_active': {'write_only': True}
         }
 
 
@@ -21,7 +22,9 @@ class UserSerializer(serializers.ModelSerializer):
 
     # def create(self, validated_data):
     def create(self, validated_data):
+        print('create serializer')
         validated_data['password'] = make_password(validated_data.get('password'))
+        validated_data['is_active'] = False
         password = validated_data.get('password')
         print('pass=-------------', password)
         instance = super().create(validated_data)

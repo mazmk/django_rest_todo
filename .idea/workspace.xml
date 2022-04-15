@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a1dfef7-d2e9-416e-bfab-3a97b23e5260" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/django_rest_todo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django_rest_todo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_rest_todo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest_todo/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_rest_todo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest_todo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/migrations/0002_rename_todo_task.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/migrations/0003_alter_task_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos_v2/viewsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos_v2/viewsets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/routers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/routers.py" afterDir="false" />
@@ -90,7 +86,8 @@
       <workItem from="1649935811322" duration="4904000" />
       <workItem from="1649940768093" duration="5705000" />
       <workItem from="1649952190165" duration="2035000" />
-      <workItem from="1649962664780" duration="5973000" />
+      <workItem from="1649962664780" duration="6664000" />
+      <workItem from="1650035355582" duration="16598000" />
     </task>
     <servers />
   </component>
