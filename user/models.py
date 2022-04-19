@@ -47,10 +47,12 @@ class UserManagerV2(UserManager):
 class User(AbstractUser):
     id = models.UUIDField(editable=False, default=uuid.uuid4, primary_key=True)
     email = models.EmailField(null=False, unique=True)
-    username = None
+    # username = None
 
-    objects = UserManagerV2()
-    USERNAME_FIELD = 'email'
+    # objects = UserManagerV2()
+    username_validator = None
+    # USERNAME_FIELD = 'email'
+    USERNAME_FIELD = "username"
     REQUIRED_FIELDS = []
     # REQUIRED_FIELDS
     # def save(self, *args, **kwargs):

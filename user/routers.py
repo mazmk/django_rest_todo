@@ -2,6 +2,7 @@ from django.urls import include, path
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from user.viewsets import SignUp, ActivateUser
+from django.contrib.auth.views import LogoutView
 
 router = routers.DefaultRouter()
 # router.register("signup", SignUpViewSet)
@@ -13,5 +14,7 @@ urlpatterns = [
     path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('activate/', ActivateUser.as_view(), name='activate_user'),
+    path('accounts/', include('allauth.urls')),
+    path('logout', LogoutView.as_view()),
 
 ]

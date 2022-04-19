@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a1dfef7-d2e9-416e-bfab-3a97b23e5260" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/django_rest_todo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django_rest_todo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_rest_todo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest_todo/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_rest_todo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest_todo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/routers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/routers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/viewsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/viewsets.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +39,11 @@
     &quot;last_opened_file_path&quot;: &quot;/home/workspace/Development/Experimental_Work/django_rest_todo&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="django_rest_todo" type="Python.DjangoServer" factoryName="Django server">
       <module name="django_rest_todo" />
@@ -87,7 +87,8 @@
       <workItem from="1649940768093" duration="5705000" />
       <workItem from="1649952190165" duration="2035000" />
       <workItem from="1649962664780" duration="6664000" />
-      <workItem from="1650035355582" duration="16598000" />
+      <workItem from="1650035355582" duration="17570000" />
+      <workItem from="1650387583759" duration="4360000" />
     </task>
     <servers />
   </component>
